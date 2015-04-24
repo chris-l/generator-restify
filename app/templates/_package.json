@@ -1,0 +1,17 @@
+{
+  "name": "<%= _.slugify(appname) %>",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "bunyan": "^0.22.1",
+    "restify": "~3.0.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-jslint": "^1.1.12",
+    "grunt-jasmine-node": "^0.2.1"
+  },
+  "scripts": {
+    "test": "grunt"
+  }
+}
