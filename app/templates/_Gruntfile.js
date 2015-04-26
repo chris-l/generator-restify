@@ -16,24 +16,26 @@ module.exports = function (grunt) {
     },<% } else { %>jshint  : {
       all     : ['package.json', 'Gruntfile.js', 'index.js', 'routes/**/*.js', 'common/**/*.js', 'tests/**/*.js']
     },<% } %>
-    jasmine_node : {
+    jasmine_nodejs : {
       options : {
-        extensions: 'js',
-        specNameMatcher: 'spec'
+        specNameSuffix: 'spec.js'
       },
-      all     : [
-        'tests/'
-      ]
+      all     : {
+        specs : [
+          "test/*.spec.js"
+        ]
+      }
     }
+
   });
 
   grunt.loadNpmTasks('<% if (useJSLint) { %>grunt-jslint<% } else { %>grunt-contrib-jshint<% } %>');
-  grunt.loadNpmTasks('grunt-jasmine-node');
+  grunt.loadNpmTasks('grunt-jasmine-nodejs');
 
   // Default task(s).
   grunt.registerTask('default', [
     '<% if (useJSLint) { %>jslint<% } else { %>jshint<% } %>',
-    'jasmine_node'
+    'jasmine_nodejs'
   ]);
 
 };
