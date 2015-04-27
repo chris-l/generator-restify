@@ -20,7 +20,11 @@ describe('restify generator', function () {
   it('creates expected files', function (done) {
     var expected = [
       // add files you expect to exist here.
-      '.jshintrc',
+      '.gitignore',
+      'index.js',
+      'package.json',
+      'routes/index.js',
+      'Gruntfile.js',
       '.editorconfig'
     ];
 
