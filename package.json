@@ -1,0 +1,39 @@
+{
+  "name": "generator-restify",
+  "version": "0.1.0",
+  "description": "Create a restify based RESTful API, with grunt and a linter (jshint or jslint)",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "chris-l/generator-restify",
+  "author": {
+    "name": "Christopher luna",
+    "email": "dev@christopher-luna.com",
+    "url": "https://github.com/chris-l"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "restify",
+    "grunt",
+    "jshint",
+    "jslint"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
