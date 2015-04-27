@@ -30,10 +30,21 @@ RestifyGenerator = yeoman.generators.Base.extend({
     // replace it with a short and sweet description of your generator
     this.log(chalk.magenta('You are using a restify generator'));
 
-    prompts = [];
+    prompts = [
+      {
+        type: 'list',
+        name: 'lint',
+        message: 'What code linter would you prefer to use?',
+        choices: [
+          'jshint',
+          'jslint'
+        ],
+        default: 0
+      }
+    ];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      this.useJSLint = props.lint === 'jslint';
 
       done();
     }.bind(this));
@@ -52,7 +63,7 @@ RestifyGenerator = yeoman.generators.Base.extend({
   projectfiles: function () {
     this.copy('editorconfig', '.editorconfig');
     this.copy('gitignore', '.gitignore');
-    this.copy('Gruntfile.js', 'Gruntfile.js');
+    this.copy('_Gruntfile.js', 'Gruntfile.js');
   }
 });
 

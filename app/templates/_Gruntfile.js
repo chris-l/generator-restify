@@ -5,17 +5,17 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg     : grunt.file.readJSON('package.json'),
-    jslint  : {
+    <% if (useJSLint) { %>jslint  : {
       all     : {
         src : ['package.json', 'Gruntfile.js', 'index.js', 'routes/**/*.js', 'common/**/*.js', 'tests/**/*.js'],
         directives : {
           indent : 2,
-          node   : true,
-          nomen  : true,
-          regexp : true
+          node : true
         }
       }
-    },
+    },<% } else { %>jshint  : {
+      all     : ['package.json', 'Gruntfile.js', 'index.js', 'routes/**/*.js', 'common/**/*.js', 'tests/**/*.js']
+    },<% } %>
     jasmine_node : {
       options : {
         extensions: 'js',
@@ -27,12 +27,12 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-jslint');
+  grunt.loadNpmTasks('<% if (useJSLint) { %>grunt-jslint<% } else { %>grunt-contrib-jshint<% } %>');
   grunt.loadNpmTasks('grunt-jasmine-node');
 
   // Default task(s).
   grunt.registerTask('default', [
-    'jslint',
+    '<% if (useJSLint) { %>jslint<% } else { %>jshint<% } %>',
     'jasmine_node'
   ]);
 
