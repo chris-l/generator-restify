@@ -33,7 +33,7 @@ mkdir some-app && cd some-app
 
 Run the generator: 
 ```
-yo generator-restify
+yo restify
 ```
 
 
