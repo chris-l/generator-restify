@@ -13,10 +13,10 @@ To create a new route, is only necessary to create a file in the `routes/` direc
 ```
 module.exports = function (server) {
   server.get('/info/:param', function (req, res, next) {
-  };
+  });
 
   server.put('/info/', function (req, res, next) {
-  };
+  });
 };
 ```
 
