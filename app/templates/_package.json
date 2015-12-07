@@ -4,7 +4,7 @@
   "main": "index.js",
   "dependencies": {
     "bunyan": "^0.22.1",
-    "restify": "~3.0.2"
+    "restify": "~4.0.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
