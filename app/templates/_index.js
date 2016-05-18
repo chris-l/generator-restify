@@ -44,10 +44,17 @@ server.pre(restify.pre.sanitizePath());
 
 /*jslint unparam:true*/
 // Default error handler. Personalize according to your needs.
-server.on('uncaughtException', function (req, res, err) {
-  console.log('Error!');
-  console.log(err);
-  res.send(500, { success : false });
+server.on('uncaughtException', function (req, res, route, err) {
+  console.log('******* Begin Error *******');
+  console.log(route);
+  console.log('*******');
+  console.log(err.stack);
+  console.log('******* End Error *******');
+   if (!res.headersSent) {
+    return res.send(500, { ok : false });
+   }
+   res.write("\n");
+   res.end();
 });
 /*jslint unparam:false*/
 
