@@ -1,6 +1,6 @@
 {
   "name": "generator-restify",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Create a restify based RESTful API, with grunt and a linter (jshint or jslint)",
   "license": "MIT",
   "main": "app/index.js",

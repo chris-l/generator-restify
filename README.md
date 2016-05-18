@@ -2,7 +2,7 @@
 
 A yeoman generator that will create the boilerplate for creating a [restify](http://mcavage.me/node-restify/) based RESTful API.
 
-It uses [grunt](http://gruntjs.com) as the task runner. It also allows to use [jslint](http://www.jslint.com) or [jshint](http://jshint.com).
+It uses [npm scripts](https://docs.npmjs.com/misc/scripts) as the task runner. It also allows to choose between [jslint](http://www.jslint.com) or [jshint](http://jshint.com).
 
 ## About the folder structure
 
