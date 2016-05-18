@@ -17,7 +17,7 @@ server = restify.createServer({
   name : '<%= _.slugify(appname) %>',
   log  : log,
   formatters : {
-    'application/json' : function (req, res, body) {
+    'application/json' : function (req, res, body, cb) {
       res.setHeader('Cache-Control', 'must-revalidate');
 
       // Does the client *explicitly* accepts application/json?
@@ -32,7 +32,7 @@ server = restify.createServer({
       if (!sendPlainText) {
         res.setHeader('Content-Type', 'application/json; charset=utf-8');
       }
-      return JSON.stringify(body);
+      return cb(null, JSON.stringify(body));
     }
   }
 });
