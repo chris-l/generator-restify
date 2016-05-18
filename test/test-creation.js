@@ -24,7 +24,6 @@ describe('restify generator', function () {
       'index.js',
       'package.json',
       'routes/index.js',
-      'Gruntfile.js',
       '.editorconfig'
     ];
 
