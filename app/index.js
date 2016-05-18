@@ -53,7 +53,7 @@ RestifyGenerator = yeoman.generators.Base.extend({
   app: function () {
     this.mkdir('common');
     this.mkdir('routes');
-    this.mkdir('test');
+    this.mkdir('tests');
 
     this.copy('_package.json', 'package.json');
     this.copy('_index.js', 'index.js');
