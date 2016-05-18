@@ -50,11 +50,11 @@ server.on('uncaughtException', function (req, res, route, err) {
   console.log('*******');
   console.log(err.stack);
   console.log('******* End Error *******');
-   if (!res.headersSent) {
+  if (!res.headersSent) {
     return res.send(500, { ok : false });
-   }
-   res.write("\n");
-   res.end();
+  }
+  res.write("\n");
+  res.end();
 });
 /*jslint unparam:false*/
 
